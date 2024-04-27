@@ -26,12 +26,11 @@ jobs:
             node-version: 20
 
         - name: Cache NPM dependencies
-          id: cache-node_modules-unit-testing
           uses: actions/cache@v3
           with:
             path: ~/.npm
-            key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-            
+            key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+
         - name: Install Dependencies
           run: npm install
     
