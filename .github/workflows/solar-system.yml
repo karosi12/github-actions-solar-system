@@ -121,7 +121,7 @@ jobs:
 
       - name: Verify kubectl command
         run: |
-          kubectl version --short -o yaml
+          kubectl version -o yaml
       - name: fetch the NGINX INGRESS CONTROLLER IP Address
         run: >
           echo "INGRESS_IP=$(kubectl -n ingress-nginx get services
