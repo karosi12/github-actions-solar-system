@@ -120,6 +120,7 @@ jobs:
           kubeconfig: ${{ secrets.KUBECONFIG }}
 
       - name: Verify kubectl command
+        if: always()
         run: |
           kubectl version -o yaml
       - name: fetch the NGINX INGRESS CONTROLLER IP Address
